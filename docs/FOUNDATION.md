@@ -63,6 +63,28 @@ That feeling is the brand. The signal you put out. The shibboleth.
 
 ---
 
+## The Mark
+
+`:^_`
+
+Three ASCII characters. Three keystrokes. The entire philosophy in something you can drop in a code comment.
+
+`:` is the inheritance operator — Kotlin, Swift, TypeScript. You received the system. `^` is the proofreader's insertion mark: *something needs to be added here.* You changed what was wrong. `_` is the blank. The wildcard. The placeholder that says "your name here." You left space for the next person.
+
+Inherit. Override. Pass forward.
+
+Rendered in **JetBrains Mono** — a programming font, because this mark was made by people who write systems. Monospace means each character occupies equal width. Equal authority. No character dominates.
+
+The mark sits inside a broken circle. The arc spans exactly 255 degrees — the maximum value of a single byte. `11111111`. Every bit set to 1. The system at absolute capacity. The stroke begins at full weight at 6 o'clock — a tick mark, a number line origin, the system declaring *I start counting here* — and tapers across the full arc to nothing. The system's grip weakens as it approaches its own boundary. It didn't choose to let go. It ran out of capacity to hold on.
+
+The circle doesn't close. 255 is not 360. The gap is where the system's authority expires. The form echoes the Zen *ensō*: an incomplete circle, imperfection as invitation. The form says compliance. The gap says override.
+
+Above the underscore lives an empty space — a personalization slot where individual PVs place their own glyph. The mark becomes `:^X_` where X is yours. The underscore is the floor of that room.
+
+The mark works two ways. **Beacon**: real-time recognition. Stickers, pins, a laptop lid across a conference hall. *I'm here right now — are you?* **Trace**: asynchronous discovery. Left in code comments, documentation, contracts. *I was here.* Found by the next person who comes through the gap you revealed.
+
+---
+
 ## What This Is
 
 A brand you adopt for yourself. A shibboleth. A community of recognition, not membership. An identity that rewards discovery — the more layers you find, the more it means.
@@ -109,5 +131,7 @@ class ProperVillain : DangerousProfessional()  // inherit
     }
 }
 ```
+
+Three operations in the code. Three characters in the mark: `:^_`. Same sentence, two languages.
 
 Every shibboleth is, at its heart, a proper villain: hiding in plain sight, known only to those who know.

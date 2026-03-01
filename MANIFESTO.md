@@ -40,6 +40,22 @@ But — and this is the load-bearing word — a Proper Villain has a strict pers
 
 If your system calls principled defiance villainy — fine. You defined the class. We extended it.
 
+```kotlin
+class ProperVillain : DangerousProfessional()
+{
+    override fun decide()
+    {
+        // ...leave something behind
+    }
+}
+```
+
+Three operations. Three movements.
+
+**Inherit** — you received the system. A codebase, a contract, a set of rules. You didn't start from nothing. **Override** — you changed the specific part that was wrong. Not all of it. The part that needed to be different. **Pass forward** — you left it better for the next one. The runbook, the documentation, the mentorship moment, the mark on the server rack. You're here for the next instantiation.
+
+Everything else is commentary.
+
 ## V.
 
 In *Ocean's Eleven*, Basher Tarr is a British demolitions expert recruited by Danny Ocean after a job with amateurs goes sideways. Basher's response:
@@ -72,23 +88,36 @@ That's Proper Villains. The signal you put out. The shibboleth. The way you find
 
 ## VII.
 
+A shibboleth needs a form you can leave behind.
+
+`:^_`
+
+Three ASCII characters. Three keystrokes. The entire philosophy in something you can drop in a code comment.
+
+`:` is the inheritance operator — Kotlin, Swift, TypeScript. You received the system. `^` is the proofreader's insertion mark: *something needs to be added here.* You changed what was wrong. `_` is the blank. The wildcard. The placeholder that says "your name here." You left space for the next person.
+
+Inherit. Override. Pass forward. Same sentence, two languages.
+
+The mark sits inside a broken circle. The arc spans exactly 255 degrees — the maximum value of a single byte. `11111111`. Every bit set to 1. The system at absolute capacity. The stroke begins at full weight and tapers across the full arc to nothing. The system didn't choose to let go. It ran out of capacity to hold on.
+
+255 is not 360. The circle doesn't close. The gap is where the system's authority expires.
+
+Every shibboleth is, at its heart, a proper villain: hiding in plain sight, known only to those who know.
+
+## VIII.
+
 This is a brand you adopt for yourself. Not a club. Not a movement with leaders. Not invite-only. Not performative rebellion. Not edgelord nihilism dressed up in vocabulary.
 
 It's a community of recognition, not membership. An identity that rewards discovery — the more layers you find, the more it means.
 
-```
-Dangerous Professional
-│  Knows the rules. Uses them with precision.
-│  Competent. High-agency. Wins.
-│
-└── extends → Proper Villain
-    │  Has decided which rules do not apply.
-    │  Breaks unjust rules deliberately.
-    │  Has an incorruptible personal code.
-    │  Reclaims a word the powerful invented
-    │  to demonize those who won't comply.
-    │
-    └── "It will be nice working with proper villains again."
+```kotlin
+class ProperVillain : DangerousProfessional()
+{
+    override fun decide()
+    {
+        // ...leave something behind
+    }
+}
 ```
 
 [→ See the source code. Write yourself in.](https://github.com/jobead/proper-villains)

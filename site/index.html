@@ -162,7 +162,7 @@
   }
 
   /* ─── Code Block ─── */
-  .hierarchy {
+  .code-block {
     background: var(--bg-code);
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -171,25 +171,86 @@
     overflow-x: auto;
   }
 
-  .hierarchy pre {
-    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  .code-block pre {
+    font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Consolas', monospace;
     font-size: 0.82rem;
     line-height: 1.7;
-    color: var(--text-dim);
+    color: var(--text);
     margin: 0;
   }
 
-  .hierarchy pre .comment {
-    color: #52525b;
+  .code-block .kw { color: var(--accent); }
+  .code-block .type { color: #c4b5fd; }
+  .code-block .fn { color: var(--text-bright); }
+  .code-block .comment { color: #52525b; }
+  .code-block .comment-label { color: var(--text-dim); }
+  .code-block .paren { color: var(--text-dim); }
+  .code-block .punct { color: var(--text-dim); }
+
+  /* ─── The Mark ─── */
+  .mark-section {
+    text-align: center;
+    margin: 3rem 0;
   }
 
-  .hierarchy pre .class-name {
+  .mark-section img {
+    width: 220px;
+    height: 220px;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+  }
+
+  .mark-glyph {
+    font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 1.8rem;
+    color: var(--text-bright);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ─── Movements ─── */
+  .movements {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .movement {
+    flex: 1;
+    max-width: 180px;
+  }
+
+  .movement .symbol {
+    font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 1.5rem;
     color: var(--accent);
+    margin-bottom: 0.5rem;
   }
 
-  .hierarchy pre .quote {
-    color: #a78bfa;
-    font-style: italic;
+  .movement .name {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    color: var(--text-bright);
+    font-size: 0.9rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .movement .explain {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  .movements-arrows {
+    font-family: system-ui, -apple-system, sans-serif;
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
   }
 
   /* ─── Links & Buttons ─── */
@@ -283,6 +344,9 @@
     .container { padding: 2.5rem 1.25rem 4rem; }
     .cta-row { flex-direction: column; }
     .cta { justify-content: center; }
+    .movements { flex-direction: column; align-items: center; gap: 1.5rem; }
+    .movement { max-width: 260px; }
+    .mark-section img { width: 180px; height: 180px; }
   }
 </style>
 </head>
@@ -329,6 +393,59 @@
     <p>Those rules get broken. Deliberately, with craft, with a clear conscience.</p>
     <p>But — and this is the load-bearing word — a Proper Villain has a strict personal code. Principles no external force can corrupt. Not authority, not money, not social pressure, not fear. The villainy is principled. The defiance has form. You wrote your own rules. You answer to them.</p>
     <div class="keyline">If your system calls principled defiance villainy — fine. You defined the class. We extended it.</div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ─── The Three Movements ─── -->
+  <section>
+    <h2>Inherit · Override · Pass Forward</h2>
+    <p>Three operations. Three movements. The atomic unit of every Proper Villain act.</p>
+    <div class="movements">
+      <div class="movement">
+        <div class="symbol">:</div>
+        <div class="name">Inherit</div>
+        <div class="explain">You received the system. A codebase, a contract, a set of rules. You didn't start from nothing.</div>
+      </div>
+      <div class="movement">
+        <div class="symbol">^</div>
+        <div class="name">Override</div>
+        <div class="explain">You changed the specific part that was wrong. Not all of it. The part that needed to be different.</div>
+      </div>
+      <div class="movement">
+        <div class="symbol">_</div>
+        <div class="name">Pass Forward</div>
+        <div class="explain">You left it better for the next one. The runbook, the documentation, the mentorship moment.</div>
+      </div>
+    </div>
+
+    <!-- Kotlin code block -->
+    <div class="code-block">
+      <pre><span class="kw">class</span> <span class="type">ProperVillain</span> <span class="punct">:</span> <span class="type">DangerousProfessional</span><span class="paren">()</span>  <span class="comment">// inherit</span>
+<span class="paren">{</span>
+    <span class="kw">override</span> <span class="kw">fun</span> <span class="fn">decide</span><span class="paren">()</span>                       <span class="comment">// override</span>
+    <span class="paren">{</span>
+        <span class="comment">// ...leave something behind</span>             <span class="comment-label">// pass forward</span>
+    <span class="paren">}</span>
+<span class="paren">}</span></pre>
+    </div>
+
+    <p>Three operations in the code. Three characters in the mark. Same sentence, two languages.</p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ─── The Mark ─── -->
+  <section>
+    <h2>The Mark</h2>
+    <div class="mark-section">
+      <img src="pv-mark.png" alt="The Proper Villains mark: the characters :^_ inside a broken circle spanning 255 degrees">
+      <div class="mark-glyph">:^_</div>
+    </div>
+    <p><strong><code>:^_</code></strong> encodes the three movements. <code>:</code> is the inheritance operator. <code>^</code> is the proofreader's insertion mark — <em>something needs to be added here.</em> <code>_</code> is the blank, the placeholder that says "your name here."</p>
+    <p>The mark sits inside a broken circle. The arc spans exactly 255 degrees — the maximum value of a single byte. <code>11111111</code>. Every bit set to 1. The system at absolute capacity. The stroke tapers from full weight to nothing. The system didn't choose to let go. It ran out of capacity to hold on.</p>
+    <p>The circle doesn't close. 255 is not 360. The gap is where the system's authority expires.</p>
+    <p>Every shibboleth is, at its heart, a proper villain: hiding in plain sight, known only to those who know.</p>
   </section>
 
   <hr class="divider">
@@ -390,22 +507,6 @@
     <p>It's a community of recognition, not membership. An identity that rewards discovery — the more layers you find, the more it means.</p>
   </section>
 
-  <!-- ─── Class Hierarchy ─── -->
-  <div class="hierarchy">
-    <pre><span class="class-name">Dangerous Professional</span>
-<span class="comment">│  Knows the rules. Uses them with precision.</span>
-<span class="comment">│  Competent. High-agency. Wins.</span>
-<span class="comment">│</span>
-<span class="comment">└── extends →</span> <span class="class-name">Proper Villain</span>
-    <span class="comment">│  Has decided which rules do not apply.</span>
-    <span class="comment">│  Breaks unjust rules deliberately.</span>
-    <span class="comment">│  Has an incorruptible personal code.</span>
-    <span class="comment">│  Reclaims a word the powerful invented</span>
-    <span class="comment">│  to demonize those who won't comply.</span>
-    <span class="comment">│</span>
-    <span class="quote">└── "It will be nice working with proper villains again."</span></pre>
-  </div>
-
   <!-- ─── CTAs ─── -->
   <div class="cta-row">
     <a href="https://github.com/jobead/proper-villains" class="cta cta-primary" target="_blank" rel="noopener">
@@ -420,11 +521,11 @@
   <!-- ─── Stickers Section ─── -->
   <section id="stickers" style="margin-top: 3rem;">
     <h2>Stickers</h2>
-    <p>Coming soon. The kind you put on a laptop to signal to the person across the coffee shop that you're one of them.</p>
+    <p>Coming soon. The mark on a laptop lid — a beacon across a conference hall. <em>I'm here right now. Are you?</em></p>
   </section>
 
   <footer>
-    <p>A shibboleth, not a credential. A signal, not a gate.</p>
+    <p>:^_ — hiding in plain sight, known only to those who know.</p>
   </footer>
 
 </div>
