@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proper Villains</title>
+<meta name="description" content="A Dangerous Professional who has decided which rules do not apply — and built a worldview around that.">
+<meta property="og:title" content="Proper Villains">
+<meta property="og:description" content="If your system calls principled defiance villainy — fine. You defined the class. We extended it.">
+<meta property="og:type" content="website">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0a0c;
+    --bg-elevated: #111114;
+    --bg-code: #0d0d10;
+    --text: #d4d4d8;
+    --text-bright: #fafafa;
+    --text-dim: #71717a;
+    --accent: #a78bfa;
+    --accent-dim: #7c3aed;
+    --link: #818cf8;
+    --border: #27272a;
+    --red: #f87171;
+  }
+
+  html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.72;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  /* ─── Header ─── */
+  .hero {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero h1 {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-bright);
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+  }
+
+  .hero .tagline {
+    font-style: italic;
+    color: var(--text-dim);
+    font-size: 1.05rem;
+    max-width: 480px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+  }
+
+  .hero .etymology {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* ─── Sections ─── */
+  section {
+    margin-bottom: 3rem;
+  }
+
+  section h2 {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 1.25rem;
+    color: var(--text);
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  strong {
+    color: var(--text-bright);
+    font-weight: 600;
+  }
+
+  em {
+    font-style: italic;
+    color: #a1a1aa;
+  }
+
+  /* ─── The Key Line ─── */
+  .keyline {
+    font-style: italic;
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    border-left: 3px solid var(--accent-dim);
+    padding: 0.75rem 1.25rem;
+    margin: 2rem 0;
+    background: rgba(124, 58, 237, 0.06);
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* ─── Blockquote ─── */
+  blockquote {
+    border-left: 3px solid var(--border);
+    padding: 0.5rem 1.25rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: #a1a1aa;
+  }
+
+  blockquote em {
+    color: var(--text-bright);
+  }
+
+  /* ─── Values ─── */
+  .values {
+    list-style: none;
+  }
+
+  .values li {
+    margin-bottom: 1.5rem;
+    padding-left: 0;
+  }
+
+  .values li .label {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    color: var(--text-bright);
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+  }
+
+  .values li .desc {
+    color: var(--text);
+    font-size: 0.95rem;
+  }
+
+  /* ─── Code Block ─── */
+  .hierarchy {
+    background: var(--bg-code);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2.5rem 0;
+    overflow-x: auto;
+  }
+
+  .hierarchy pre {
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  .hierarchy pre .comment {
+    color: #52525b;
+  }
+
+  .hierarchy pre .class-name {
+    color: var(--accent);
+  }
+
+  .hierarchy pre .quote {
+    color: #a78bfa;
+    font-style: italic;
+  }
+
+  /* ─── Links & Buttons ─── */
+  a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  a:hover {
+    border-bottom-color: var(--link);
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .cta-primary {
+    background: var(--accent-dim);
+    color: #fff;
+  }
+
+  .cta-primary:hover {
+    background: #6d28d9;
+    border-bottom-color: transparent;
+  }
+
+  .cta-secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+
+  .cta-secondary:hover {
+    border-color: var(--text-dim);
+    color: var(--text-bright);
+    border-bottom-color: var(--text-dim);
+  }
+
+  .cta svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+
+  /* ─── Footer ─── */
+  footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  footer p {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+  }
+
+  /* ─── Divider ─── */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 3rem 0;
+    border: none;
+  }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .hero h1 { font-size: 2.2rem; }
+    .container { padding: 2.5rem 1.25rem 4rem; }
+    .cta-row { flex-direction: column; }
+    .cta { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header class="hero">
+    <h1>Proper Villains</h1>
+    <p class="tagline">"It will be nice working with proper villains again."</p>
+    <p class="etymology">villain (n.) — from Latin <em>villanus</em>: villager. A word the powerful invented to demonize those who won't comply.</p>
+  </header>
+
+  <!-- ─── The Word ─── -->
+  <section>
+    <h2>The Word</h2>
+    <p>The word <em>villain</em> comes from the Latin <em>villanus</em>. It meant villager. A common person.</p>
+    <p>The landed aristocracy took a word that just meant "someone who isn't us" and made it mean <em>morally inferior</em>. This wasn't slang that drifted — it was a class judgment welded into the language by the people who owned the language. A thousand years later, it still works. You hear <em>villain</em> and think <em>evil</em>. They hear <em>villain</em> and think <em>them</em>.</p>
+    <p>We think it's a fine word. We're taking it back.</p>
+    <p><em>Proper</em> as the British use it: genuine, real, the actual thing. Not playing at something. Not performing a role. The real deal, full stop.</p>
+    <p><em>Proper</em> as everyone uses it: correct, principled, done right.</p>
+    <p>A Proper Villain is both.</p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ─── The Base Class ─── -->
+  <section>
+    <h2>The Base Class</h2>
+    <p>In 2017, Patrick McKenzie wrote an <a href="https://www.kalzumeus.com/2017/09/09/identity-theft-credit-reports/" target="_blank" rel="noopener">essay about fighting Equifax</a> after his identity was stolen. It's a masterclass in what happens when a competent person decides to win.</p>
+    <p>He called this operating mode a <strong>Dangerous Professional</strong>. It looks like this:</p>
+    <p>You keep meticulous records and you never bluff. You say "I require" instead of "I demand," because angry people demand and demands can be ignored — professionals <em>require</em>, and requirements have consequences. You know every rule the system wrote, and you use them with precision. You are a credible threat because you follow through. Every time. Not sometimes. Not when you feel like it. Every time.</p>
+    <p>A Dangerous Professional is dangerous <em>within</em> the system. Competent. High-agency. Prepared. The most effective person the bureaucracy has ever encountered, and entirely within the lines.</p>
+    <p>That's the base class.</p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ─── The Extension ─── -->
+  <section>
+    <h2>The Extension</h2>
+    <p>A Proper Villain extends it.</p>
+    <p>Where the Dangerous Professional knows the rules, the Proper Villain has decided which ones <em>don't apply</em>. Not all of them. Not arbitrarily. Specific rules — the ones that reinforce unjust hierarchy, that discriminate, that oppress, that exist because someone with power needed them to exist and no one with power needed them not to.</p>
+    <p>Those rules get broken. Deliberately, with craft, with a clear conscience.</p>
+    <p>But — and this is the load-bearing word — a Proper Villain has a strict personal code. Principles no external force can corrupt. Not authority, not money, not social pressure, not fear. The villainy is principled. The defiance has form. You wrote your own rules. You answer to them.</p>
+    <div class="keyline">If your system calls principled defiance villainy — fine. You defined the class. We extended it.</div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ─── The Signal ─── -->
+  <section>
+    <h2>The Signal</h2>
+    <p>In <em>Ocean's Eleven</em>, Basher Tarr is a British demolitions expert recruited by Danny Ocean after a job with amateurs goes sideways. Basher's response:</p>
+    <blockquote><em>"It will be nice working with proper villains again."</em></blockquote>
+    <p>That line is the whole brand.</p>
+    <p>It's the relief of finally being in a room where everyone operates at your level, with your values, with the same unspoken understanding of what matters. You've been in rooms full of amateurs. Rooms full of people who follow rules they've never read. Rooms where doing the right thing is a fireable offense. You know what those rooms feel like.</p>
+    <p>Now imagine the other room.</p>
+    <p>That's Proper Villains. The signal you put out. The shibboleth. The way you find your people.</p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ─── The Values ─── -->
+  <section>
+    <h2>The Values</h2>
+    <ul class="values">
+      <li>
+        <span class="label">Competence is the baseline.</span>
+        <span class="desc">You are dangerous because you are genuinely skilled — in practice, not on paper. Competence isn't claimed. It's noticed.</span>
+      </li>
+      <li>
+        <span class="label">High agency.</span>
+        <span class="desc">You don't wait for permission or for the system to work as intended. You identify what needs to happen and you make it happen.</span>
+      </li>
+      <li>
+        <span class="label">An incorruptible code.</span>
+        <span class="desc">You have principles no external force can buy, threaten, or socially pressure out of you. Your code is yours. You wrote it. You answer to it.</span>
+      </li>
+      <li>
+        <span class="label">Principled defiance.</span>
+        <span class="desc">You break rules that deserve to be broken. Not from anger or chaos — from clear-eyed conviction that compliance with injustice is itself injustice.</span>
+      </li>
+      <li>
+        <span class="label">Craft over credential.</span>
+        <span class="desc">What you can do matters more than what you're certified to do. The word <em>villain</em> was invented to say common people are morally inferior. We reject that framing at the root.</span>
+      </li>
+      <li>
+        <span class="label">Deliberate in all things.</span>
+        <span class="desc">Every action is intentional, proportional, chosen. You don't bluster. You don't perform outrage. You assess, decide, act, follow through. The most dangerous person in the room is the one who is calm.</span>
+      </li>
+      <li>
+        <span class="label">The table is open.</span>
+        <span class="desc">This is not a credential, an institution, or a gate. It's a signal — a way of recognizing each other. You don't get admitted. You recognize yourself.</span>
+      </li>
+    </ul>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ─── What This Is ─── -->
+  <section>
+    <h2>What This Is</h2>
+    <p>A brand you adopt for yourself. Not a club. Not a movement with leaders. Not invite-only. Not performative rebellion. Not edgelord nihilism dressed up in vocabulary.</p>
+    <p>It's a community of recognition, not membership. An identity that rewards discovery — the more layers you find, the more it means.</p>
+  </section>
+
+  <!-- ─── Class Hierarchy ─── -->
+  <div class="hierarchy">
+    <pre><span class="class-name">Dangerous Professional</span>
+<span class="comment">│  Knows the rules. Uses them with precision.</span>
+<span class="comment">│  Competent. High-agency. Wins.</span>
+<span class="comment">│</span>
+<span class="comment">└── extends →</span> <span class="class-name">Proper Villain</span>
+    <span class="comment">│  Has decided which rules do not apply.</span>
+    <span class="comment">│  Breaks unjust rules deliberately.</span>
+    <span class="comment">│  Has an incorruptible personal code.</span>
+    <span class="comment">│  Reclaims a word the powerful invented</span>
+    <span class="comment">│  to demonize those who won't comply.</span>
+    <span class="comment">│</span>
+    <span class="quote">└── "It will be nice working with proper villains again."</span></pre>
+  </div>
+
+  <!-- ─── CTAs ─── -->
+  <div class="cta-row">
+    <a href="https://github.com/jobead/proper-villains" class="cta cta-primary" target="_blank" rel="noopener">
+      <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      See the source. Write yourself in.
+    </a>
+    <a href="#stickers" class="cta cta-secondary">
+      🔥 Get stickers
+    </a>
+  </div>
+
+  <!-- ─── Stickers Section ─── -->
+  <section id="stickers" style="margin-top: 3rem;">
+    <h2>Stickers</h2>
+    <p>Coming soon. The kind you put on a laptop to signal to the person across the coffee shop that you're one of them.</p>
+  </section>
+
+  <footer>
+    <p>A shibboleth, not a credential. A signal, not a gate.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
